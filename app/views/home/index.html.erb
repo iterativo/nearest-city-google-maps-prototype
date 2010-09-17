@@ -1,0 +1,15 @@
+<h1>Nearest City Location</h1>
+
+
+<form action="/home/find_nearest_city" method="get">
+  <div>
+    <input id="ip" type="text" name="ip"/>
+  </div>
+  <input id="submit" type="submit" value="Calculate"/>
+</form>
+<% if @nearest_city %>
+<div style="margin-top:10px">
+  <span style="margin-right:2px">Nearest City:</span>
+  <span style="font-weight:bold"><%= @nearest_city %></span>
+</div>
+<% end %>
