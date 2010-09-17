@@ -2239,3 +2239,136 @@ Processing HomeController#find_nearest_city (for 127.0.0.1 at 2010-09-16 21:34:1
   Parameters: {"ip"=>"aa"}
 Rendering home/index
 Completed in 18ms (View: 2 | 200 OK [http://0.0.0.0/home/find_nearest_city?ip=aa]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-09-16 21:39:03) [GET]
+Rendering home/index
+Completed in 6ms (View: 1 | 200 OK [http://localhost/]
+WARNING: geokit-rails requires the Geokit gem. You either don't have the gem installed,
+or you haven't told Rails to require it. If you're using a recent version of Rails: 
+  config.gem "geokit" # in config/environment.rb
+and of course install the gem: sudo gem install geokit
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-09-17 09:53:26) [GET]
+Rendering home/index
+Completed in 102ms (View: 82 | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-09-17 09:54:05) [GET]
+Rendering home/index
+Completed in 25ms (View: 1 | 200 OK [http://localhost/]
+
+
+Processing HomeController#find_nearest_city (for 127.0.0.1 at 2010-09-17 09:54:22) [GET]
+  Parameters: {"ip"=>"127.23.2.2"}
+Rendering home/index
+Completed in 24ms (View: 1 | 200 OK [http://localhost/home/find_nearest_city?ip=127.23.2.2]
+
+
+Processing HomeController#find_nearest_city (for 127.0.0.1 at 2010-09-17 09:55:02) [GET]
+  Parameters: {"ip"=>"11"}
+
+NameError (uninitialized constant HomeController::Redis):
+  app/controllers/home_controller.rb:9:in `find_nearest_city'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (179.2ms)
+Rendered rescues/_request_and_response (10.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#find_nearest_city (for 127.0.0.1 at 2010-09-17 09:55:33) [GET]
+  Parameters: {"ip"=>"11"}
+Rendering home/index
+Completed in 13ms (View: 1 | 200 OK [http://localhost/home/find_nearest_city?ip=11]
+
+
+Processing HomeController#find_nearest_city (for 127.0.0.1 at 2010-09-17 09:55:37) [GET]
+  Parameters: {"ip"=>"11"}
+Rendering home/index
+Completed in 24ms (View: 1 | 200 OK [http://localhost/home/find_nearest_city?ip=11]
+
+
+Processing HomeController#find_nearest_city (for 127.0.0.1 at 2010-09-17 10:19:08) [GET]
+  Parameters: {"ip"=>"71788544"}
+Rendering home/index
+Completed in 26ms (View: 1 | 200 OK [http://localhost/home/find_nearest_city?ip=71788544]
+
+
+Processing HomeController#find_nearest_city (for 127.0.0.1 at 2010-09-17 10:48:28) [GET]
+  Parameters: {"ip"=>"71788544"}
+
+NameError (uninitialized constant Geokit::GeLoc):
+  app/controllers/home_controller.rb:18:in `find_nearest_city'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (126.0ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#find_nearest_city (for 127.0.0.1 at 2010-09-17 10:49:29) [GET]
+  Parameters: {"ip"=>"71788544"}
+Rendering home/index
+Completed in 42ms (View: 2 | 200 OK [http://localhost/home/find_nearest_city?ip=71788544]
+
+
+Processing HomeController#find_nearest_city (for 127.0.0.1 at 2010-09-17 10:54:48) [GET]
+  Parameters: {"ip"=>"71788544"}
+Rendering home/index
+Completed in 63ms (View: 2 | 200 OK [http://localhost/home/find_nearest_city?ip=71788544]
+
+
+Processing HomeController#find_nearest_city (for 127.0.0.1 at 2010-09-17 10:54:56) [GET]
+  Parameters: {"ip"=>"71029760"}
+Rendering home/index
+Completed in 95ms (View: 2 | 200 OK [http://localhost/home/find_nearest_city?ip=71029760]
+
+
+Processing HomeController#find_nearest_city (for 127.0.0.1 at 2010-09-17 10:55:03) [GET]
+  Parameters: {"ip"=>"23232323"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.split):
+  lib/redis_value_parser.rb:13:in `resolve_geolocation'
+  app/controllers/home_controller.rb:21:in `find_nearest_city'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (74.2ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#find_nearest_city (for 127.0.0.1 at 2010-09-17 10:56:50) [GET]
+  Parameters: {"ip"=>"23232323"}
+Rendering home/index
+Completed in 33ms (View: 2 | 200 OK [http://localhost/home/find_nearest_city?ip=23232323]
