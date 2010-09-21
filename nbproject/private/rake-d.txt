@@ -42,6 +42,7 @@ doc\:clobber_rails=Remove rdoc products
 doc\:guides=Generate Rails guides
 doc\:plugins=Generate documentation for all installed plugins
 doc\:plugins\:geokit-rails=Generate documentation for the geokit-rails plugin
+doc\:plugins\:ym4r_gm=Generate documentation for the ym4r_gm plugin
 doc\:rails=Build the RDOC HTML Files
 doc\:reapp=Force a rebuild of the RDOC files
 doc\:rerails=Force a rebuild of the RDOC files

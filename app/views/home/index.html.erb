@@ -7,9 +7,14 @@
   </div>
   <input id="submit" type="submit" value="Calculate"/>
 </form>
-<% if @nearest_city %>
 <div style="margin-top:10px">
   <span style="margin-right:2px">Nearest City:</span>
-  <span style="font-weight:bold"><%= @nearest_city %></span>
+  <% if @nearest_city %>
+    <span style="font-weight:bold"><%= @nearest_city.name %></span>
+    <%= GMap.header %>
+    <%= @map.to_html %>
+    <%= @map.div(:width => 600, :height => 400) %>
+  <% else %>
+    <span style="font-weight:bold">Unknown IP</span>
+  <% end %>
 </div>
-<% end %>

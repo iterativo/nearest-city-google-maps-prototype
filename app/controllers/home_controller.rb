@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'redis'
-require 'geokit'
+require 'd_l_city'
 
 class HomeController < ApplicationController
   def index
@@ -21,8 +21,9 @@ class HomeController < ApplicationController
 		if (redis_value)
 			ip_geolocation = RedisValueParser.new(redis_value).resolve_geolocation
 			@nearest_city = calculate_nearest_city(ip_geolocation)
+			@map = get_map(@nearest_city)
 		else
-			@nearest_city = "Unknown IP"
+			@nearest_city = nil
 		end
 
 		render :action => "index"
@@ -32,21 +33,27 @@ class HomeController < ApplicationController
 
 	# TODO Refactor
 	def calculate_nearest_city(geolocation)
-		distance_to_austin = geolocation.distance_to @austin
-		distance_to_new_york = geolocation.distance_to @new_york
+		distance_to_austin = geolocation.distance_to @austin.geoloc
+		distance_to_new_york = geolocation.distance_to @new_york.geoloc
 
 		return distance_to_austin > distance_to_new_york ?
-			"New York" : "Austin"
+			@new_york : @austin
 	end
 	
 	# TODO Refactor
 	def initialize_cities_with_service
-		@new_york = Geokit::GeoLoc.new
-		@new_york.lat = 40.733
-		@new_york.lng = -74.0078
+		@new_york = DLCity.new("New York", 40.733, -74.0078)
+		@austin = DLCity.new("Austin", 30.2414, -97.7687)
+	end
 
-		@austin = Geokit::GeoLoc.new
-		@austin.lat = 30.2414
-		@austin.lng = -97.7687
+	def get_map(dlCity)
+		map = GMap.new("map_div")
+		map.control_init(:large_map => true, :map_type => true)
+
+		coordinates = [dlCity.geoloc.lat, dlCity.geoloc.lng]
+		map.center_zoom_init(coordinates, 6)
+		map.overlay_init(GMarker.new(coordinates, :title => dlCity.name,
+				:info_window => dlCity.name))
+		return map
 	end
 end
